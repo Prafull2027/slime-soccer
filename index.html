@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slime Soccer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-container">
+
+    <!-- Game Canvas -->
+    <canvas id="game-canvas" width="800" height="450"></canvas>
+
+    <!-- ===== MAIN MENU ===== -->
+    <div id="screen-menu" class="screen">
+      <h1 class="game-title">⚽ SLIME SOCCER</h1>
+      <p class="subtitle">RETRO ARCADE EDITION</p>
+
+      <div class="mode-buttons">
+        <button class="btn btn-primary" id="btn-single">🤖 VS COMPUTER</button>
+        <button class="btn btn-secondary" id="btn-multi">👥 LOCAL MULTIPLAYER</button>
+      </div>
+
+      <div class="duration-selector">
+        <p class="duration-label">MATCH DURATION</p>
+        <div class="duration-options" id="duration-options">
+          <button class="duration-btn" data-mins="1">1 MIN</button>
+          <button class="duration-btn" data-mins="2">2 MIN</button>
+          <button class="duration-btn selected" data-mins="3">3 MIN</button>
+          <button class="duration-btn" data-mins="5">5 MIN</button>
+          <button class="duration-btn" data-mins="8">8 MIN</button>
+        </div>
+      </div>
+
+      <div class="controls-hint">
+        PLAYER 1 (CYAN) — <span>← → MOVE &nbsp; ↑ JUMP &nbsp; ↓/SPACE GRAB</span><br/>
+        PLAYER 2 (RED) &nbsp;&nbsp;— <span>A D MOVE &nbsp; W JUMP &nbsp; S/SHIFT GRAB</span>
+      </div>
+    </div>
+
+    <!-- ===== PAUSE MENU ===== -->
+    <div id="screen-pause" class="screen hidden">
+      <h2 class="screen-title">⏸ PAUSED</h2>
+      <button class="btn btn-primary" id="btn-resume">▶ RESUME</button>
+      <button class="btn btn-neutral" id="btn-menu-from-pause">🏠 MAIN MENU</button>
+    </div>
+
+    <!-- ===== GAME OVER ===== -->
+    <div id="screen-gameover" class="screen hidden">
+      <h2 class="screen-title">⏱ FULL TIME!</h2>
+      <p class="winner-text" id="winner-text">DRAW!</p>
+      <p class="final-score">
+        <span class="cyan" id="go-score-left">0</span>
+        &nbsp;—&nbsp;
+        <span class="red" id="go-score-right">0</span>
+      </p>
+      <button class="btn btn-primary" id="btn-restart">🔄 PLAY AGAIN</button>
+      <button class="btn btn-neutral" id="btn-menu-from-over">🏠 MAIN MENU</button>
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
