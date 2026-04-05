@@ -550,7 +550,7 @@ class Renderer {
     // Camp warning zone
     if (campWarning) {
       ctx.fillStyle = 'rgba(255, 50, 50, 0.18)';
-      ctx.fillRect(isLeft ? gx : gx, gy, gw + (isLeft ? SLIME_RADIUS * 2 : SLIME_RADIUS * 2), gh + 30);
+      ctx.fillRect(gx, gy, gw + SLIME_RADIUS * 2, gh + 30);
     }
 
     // Back wall
@@ -1022,9 +1022,9 @@ class Game {
   // ─── GOAL SCORED ────────────────────────────
   _onGoalScored(side) {
     if (side === 'right') {
-      this.scoreRight++;  // right goal = left player scored
+      this.scoreLeft++;   // ball in right goal = left (cyan) player scored
     } else {
-      this.scoreLeft++;   // left goal = right player scored
+      this.scoreRight++;  // ball in left goal = right (red) player scored
     }
 
     this.goalFlash = 1.0;
